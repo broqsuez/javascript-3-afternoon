@@ -21,7 +21,10 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+var {color} = carDetails;
+var {make} = carDetails;
+var {model} = carDetails;
+var {year} = carDetails;
 
 
 
@@ -34,7 +37,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+  var {title, firstName, lastName} = {title: obj.title, firstName: obj.firstName, lastName: obj.lastName}
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
@@ -53,8 +56,11 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
+function totalPopulation(obj){
+  var {utah, california, texas, arizona} = obj;
+  var sum = utah + california + texas + arizona;
+  return sum;
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -67,7 +73,14 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj){
+  var ingredients = [];
+  var {carb, fat, protein} = obj;
+  ingredients.push(obj.carb);
+  ingredients.push(obj.fat);
+  ingredients.push(obj.protein);
+  return ingredients;
+}
 
 
 
@@ -85,8 +98,18 @@ function greeting( obj ) {
   Find the smallest number of the three and return that number.
 */
 
-//Code Here
-
+var largeNumbers = (object) => {
+  var valuesArray = [];
+  var {first, second, third} = object
+  for (var key in object){
+  valuesArray.push(object[key]);
+  var orderedValues = valuesArray.sort(function(a, b){return a - b})
+  var smallest = orderedValues[0];
+   
+     
+  }
+return smallest  
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -97,6 +120,13 @@ function greeting( obj ) {
   Find the longest array and return that array.
 */
 
-//Code Here
 
-
+var numberGroups = ({a, b, c}) => {
+  if (a.length > b.length && a.length > c.length){
+    return a;
+  } else if (b.length > a.length && b.length > c.length){
+    return b;
+  } else if (c.length > a.length && c.length > b.length){
+    return c;
+  }
+}
